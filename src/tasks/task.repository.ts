@@ -1,4 +1,3 @@
-import { stat } from 'fs';
 import { EntityRepository, Repository } from 'typeorm';
 
 import { CreateTaskDto } from './dto/create-task.dto';
