@@ -13,7 +13,7 @@ import { UserRepository } from './user.repository';
       defaultStrategy: 'jwt',
     }),
     JwtModule.register({
-      secret: process.env.JWT_SECRET,
+      secret: 'topSecret51',
       signOptions: {
         expiresIn: 3600,
       },
