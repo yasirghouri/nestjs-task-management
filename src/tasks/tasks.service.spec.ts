@@ -44,26 +44,26 @@ describe('TasksService', () => {
     });
   });
 
-  //   describe('getTaskById', () => {
-  //     it('calls taskRepository.findOne() and successfuly retrieve and return the task ', async () => {
-  //       const mockTask = {
-  //         title: 'Test title',
-  //         description: 'Test description',
-  //       };
-  //       taskRepository.findOne.mockResolvedValue(mockTask);
-  //       const result = await tasksService.getTaskById(1, mockUser);
-  //       expect(result).toEqual(mockTask);
-  //       expect(taskRepository.findOne).toHaveBeenCalledWith({
-  //         where: { id: 1, userId: mockUser.id },
-  //       });
-  //     });
-  //     it('throws an error as task is not found', () => {
-  //       taskRepository.findOne.mockResolvedValue(null);
-  //       expect(tasksService.getTaskById(1, mockUser)).rejects.toThrow(
-  //         NotFoundException,
-  //       );
-  //     });
-  //   });
+  describe('getTaskById', () => {
+    it('calls taskRepository.findOne() and successfuly retrieve and return the task ', async () => {
+      const mockTask = {
+        title: 'Test title',
+        description: 'Test description',
+      };
+      taskRepository.findOne.mockResolvedValue(mockTask);
+      const result = await tasksService.getTaskById(1, mockUser);
+      expect(result).toEqual(mockTask);
+      expect(taskRepository.findOne).toHaveBeenCalledWith({
+        where: { id: 1, userId: mockUser.id },
+      });
+    });
+    it('throws an error as task is not found', () => {
+      taskRepository.findOne.mockResolvedValue(null);
+      expect(tasksService.getTaskById(1, mockUser)).rejects.toThrow(
+        NotFoundException,
+      );
+    });
+  });
 
   //   describe('createTask', () => {
   //     it('calls taskRepository.create() and returns the result', async () => {
